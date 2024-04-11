@@ -24,6 +24,44 @@
             <Entry Placeholder="Rechercher..."
                 BackgroundColor="Transparent"/>
         </Frame>
+
+        <Grid BackgroundColor="White">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto" />
+                <ColumnDefinition Width="2*" />
+            </Grid.ColumnDefinitions>
+            
+            <Image Source="icons8_design.png"
+                   Aspect="AspectFill"
+                   HeightRequest="80"
+                   Margin="0,0,20,0"/>
+            
+            <Label Grid.Column="1"
+                   Text="Exemple Titre"
+                   FontAttributes="Bold"
+                   FontSize="18" />
+            
+            <Label Grid.Column="1"
+                Text="lorem"
+                VerticalOptions="Center"
+                FontSize="16" 
+                LineHeight="0.8"/>
+            <HorizontalStackLayout Grid.Column="1">
+                <Label
+                    Text="42"
+                    VerticalOptions="End"
+                    Padding="0,0,4,0"
+                    />
+                <Label
+                    Text="Cours"
+                    VerticalOptions="End"
+                    />
+            </HorizontalStackLayout>
+        </Grid>
     </StackLayout>
-    
+
+
 </ContentPage>
