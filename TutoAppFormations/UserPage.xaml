@@ -2,11 +2,62 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="TutoAppFormations.UserPage"
-             Title="UserPage">
+             Title="Profil"
+             Shell.BackgroundColor="#F24D65"
+             Shell.TitleColor="White">
+             
     <VerticalStackLayout>
-        <Label 
-            Text="Welcome to .NET MAUI!"
-            VerticalOptions="Center" 
-            HorizontalOptions="Center" />
+        <!-- Carte Utilisateur -->
+        <Frame Background="#ececec" Margin="20" BorderColor="Transparent">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+                <Image Source="icons8_design.png"/>
+                <Label Grid.Row="1" Text="Jérémy"
+                       FontAttributes="Bold"
+                       FontSize="22"
+                       HorizontalTextAlignment="Center"/>
+                <StackLayout Grid.Column="1">
+                    <Label Text="Nom :"
+                           FontSize="16"
+                           FontAttributes="Bold"
+                           Margin="0,10,0,0"/>
+                    <Label Text="fdsofdshfdsnfds"/>
+                </StackLayout>
+                <Label Grid.Row="1"
+                       Grid.Column="1"
+                       Text="Lorem"
+                       FontAttributes="Bold"
+                       HorizontalTextAlignment="End"/>
+            </Grid>
+        </Frame>
+        <!-- Paramètres utlisateur -->
+        <TableView Intent="Settings">
+            <TableRoot>
+                <TableSection Title="Vos paramètres" TextColor="#323a45">
+                    <SwitchCell Text="1. Notifications"/>
+                    <SwitchCell Text="2. Mode sombre"/>
+                    <SwitchCell Text="3. Langue"/>
+                    <SwitchCell Text="4. Confidentialité"/>
+                </TableSection>
+            </TableRoot>
+        </TableView>
+        <!-- boutons -->
+        <Button Text="Se déconnecter"
+                    BackgroundColor="#F24D65"
+                    TextColor="White"
+                    Margin="0,20,0,0"
+                    FontSize="16"
+                    WidthRequest="250"
+                    Clicked="Button_Clicked"
+                />
+        
+        <Button Text="Se connecter" Background="Transparent" TextColor="#323a45" Clicked="Button_Clicked_1"/>
     </VerticalStackLayout>
 </ContentPage>
