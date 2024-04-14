@@ -58,6 +58,7 @@
 
 	<ItemGroup>
 	  <None Remove="Resources\Raw\Categories.json" />
+	  <None Remove="Resources\Raw\development.json" />
 	</ItemGroup>
 
 	<ItemGroup>
