@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="TutoAppFormations.CoursePage"
+             Title="Suivre la formation"
+             Shell.BackgroundColor="#F24D65"
+             Shell.TitleColor="White">
+    <VerticalStackLayout>
+        <Label
+            Text="{Binding Title}"
+            VerticalOptions="Center"
+            HorizontalOptions="Center"
+            FontAttributes="Bold"
+            FontSize="32"
+            Margin="0,10,0,20"
+            />
+        <Label
+            Text="Consulter les vidéos"
+            VerticalOptions="Center"
+            HorizontalOptions="Center"
+            Margin="0,0,0,22"
+            FontSize="22"
+            />
+
+        <Image Source="dqsqsdsdqsqd.png" WidthRequest="350"/>
+
+        <ListView x:Name="lv" Margin="20" BackgroundColor="White">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ImageCell
+                    ImageSource="play.png"
+                    Text="Chapitre X : lorem ipsum"
+                    Detail="Lorem ispum odsnoifnsd"
+                    TextColor="#323a45"/>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+
+        <Frame Margin="20" BorderColor="#ececec">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="2*" />
+                </Grid.ColumnDefinitions>
+                <Image Source="design.png" Margin="0,0,20,0"/>
+                <StackLayout Grid.Column="1">
+                    <Label Text="fsdfsdfds" FontSize="18"/>
+                    <Label Text="fsdfsdfdsdsqdsqdsqdqdsqdsqdqs" FontSize="12"/>
+                    <Button Text="Télécharger" Background="Red" FontSize="16" Margin="0,10,0,0"/>
+                </StackLayout>
+            </Grid>
+        </Frame>
+    </VerticalStackLayout>
+</ContentPage>

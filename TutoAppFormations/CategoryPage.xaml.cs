@@ -32,8 +32,8 @@ public partial class CategoryPage : ContentPage
 
     }
 
-    private void lv_ItemSelected(object sender, SelectedItemChangedEventArgs e)
+    private async void lv_ItemSelected(object sender, SelectedItemChangedEventArgs e)
     {
-
+       await Navigation.PushAsync(new CoursePage((Formation)e.SelectedItem));
     }
 }
