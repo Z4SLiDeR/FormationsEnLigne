@@ -23,7 +23,6 @@ namespace TutoAppFormations
             InitializeComponent();
 
             //LoadDataFromAPI();
-
             LoadDataFromLocalAsset();
         }
 
@@ -51,6 +50,16 @@ namespace TutoAppFormations
             var content = reader.ReadToEnd();
             var Items = JsonConvert.DeserializeObject<List<Categorie>>(content);
             lv.ItemsSource = Items;
+        }
+
+        private async void lv_ItemSelected(object sender, SelectedItemChangedEventArgs e)
+        {
+            Categorie categorie = (Categorie)e.SelectedItem;
+
+            await Navigation.PushAsync(new CategoryPage(categorie)
+            {
+                BindingContext = e.SelectedItem
+            });
         }
     }
 

@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="TutoAppFormations.CategoryPage"
+             Title="{Binding Title}"
+             Shell.BackgroundColor="#F24D65"
+             Shell.TitleColor="White">
+    
+    <VerticalStackLayout>
+        <Label
+            Text="En vedette"
+            VerticalOptions="Center"
+            HorizontalOptions="Center"
+            FontSize="32"
+            FontAttributes="Bold"
+            Margin="0,10,0,20"
+            />
+
+        <Grid Margin="10,0,10,20">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="2*" />
+            </Grid.ColumnDefinitions>
+            <Image
+                Source="{Binding Image}"
+                Aspect="Fill"
+                HeightRequest="105"
+                Margin="0,0,10,0"
+                />
+            <StackLayout Grid.Column="1">
+                <Label Text="Unity"
+                       FontSize="26"
+                       FontAttributes="Bold"
+                       />
+                <Label Text="Développement des jeux vidéo"
+                       FontSize="16"/>
+                <HorizontalStackLayout>
+                    <Image Source="star.png"/>
+                    <Image Source="star.png"/>
+                    <Image Source="star.png"/>
+                    <Image Source="star.png"/>
+                    <Image Source="star.png"/>
+                </HorizontalStackLayout>
+            </StackLayout>
+        </Grid>
+
+        <Label
+            Text="Les meilleures formations vidéo"
+            VerticalOptions="Center"
+            HorizontalOptions="Center"
+            FontSize="22"
+            Margin="0,10,0,20"
+            />
+        <Label
+            Text="{Binding Desc}"
+            VerticalOptions="Center"
+            HorizontalOptions="Center"
+            Margin="0,10,0,20"/>
+
+        <BoxView WidthRequest="300"
+                 HeightRequest="1"
+                 Margin="0,0,0,20"
+                 BackgroundColor="#ececec"
+                 />
+
+        <Label
+            Text="Aucune Formation trouvée"
+            TextColor="#f24D65"
+            HorizontalOptions="Center"
+            Margin="20"
+            x:Name="noCoursesError"
+            />
+
+        <ListView x:Name="lv"
+                  Margin="5"
+                  HeightRequest="440"
+                  SeparatorColor="Transparent"
+                  ItemSelected="lv_ItemSelected"
+                  BackgroundColor="White">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ImageCell
+                        ImageSource="{Binding Image}"
+                        Text="{Binding FullTitle}"
+                        Detail="{Binding Desc}"
+                        TextColor="#323a45"
+                        />
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+    </VerticalStackLayout>
+</ContentPage>

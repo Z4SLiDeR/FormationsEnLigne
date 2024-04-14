@@ -28,7 +28,8 @@
         <ListView x:Name="lv" 
                   SeparatorColor="White"
                   RowHeight="98"
-                  BackgroundColor="White">
+                  BackgroundColor="White"
+                  ItemSelected="lv_ItemSelected">
             <ListView.ItemTemplate>
                 <DataTemplate>
                     <ViewCell>
